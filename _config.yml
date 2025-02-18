@@ -6,9 +6,11 @@ url: https://lyonspeed.github.io
 
 collections_dir: collections
 
+#footer: []
+#footer_content: ""
 
 collections:
-  collections/hacme:
+  hackmyvm:
     permalink: "/:collection/:path/"
     output: true
 
@@ -20,8 +22,8 @@ just_the_docs:
 
 
   collections:
-    collections/hacme:
-      name: Hackme
+    hackmyvm:
+      name: HackMyVM
       nav_exclude: false  # Incluir en la navegación (por defecto)
       search_exclude: false  # Incluir en la búsqueda (por defecto)
       nav_fold: true  # Plegar la colección en la navegación (nuevo en v0.4)

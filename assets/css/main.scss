@@ -1,0 +1,28 @@
+/* Callouts personalizados */
+.highlight {
+    background-color: #f4f4f4;
+    border-left: 4px solid #f39c12;
+    padding: 1em;
+  }
+  
+  .note {
+    background-color: #eaf7e2;
+    border-left: 4px solid #28a745;
+    padding: 1em;
+  }
+  
+  .important {
+    background-color: #ffe5e5;
+    border-left: 4px solid #e74c3c;
+    padding: 1em;
+  }
+  
+  .important-title {
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
+  .opaque {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
