@@ -1,9 +1,7 @@
 ---
-title: Home
-layout: home
+title: System
+layout: system
 ---
-
-[Link to another page](/sys/).
 
 ## Reconnaissance
 
@@ -64,15 +62,15 @@ PORT   STATE SERVICE REASON
 
 Let´s register
 
-![](assets/images/Pasted_image_20250217123138.png)
+![[Pasted image 20250217123138.png]]
 
 ### Step 5: Intercept with BurpSuite
 
-![](assets/images/Pasted_image_20250217123416.png)
+![[Pasted image 20250217123416.png]]
 
 In Repetar Tab send the request
 
-![](assets/images/Pasted_image_20250217123522.png)
+![[Pasted image 20250217123522.png]]
 
 As that in the response is shown the email...
 
@@ -135,7 +133,7 @@ Let´s note thre is an user david: `david:x:1000:1000::/home/david:/bin/bash`
 
 *I. Storage the Request in RAW format in `xxe_rq.txt`:*
 
-![](assets/images/Pasted_image_20250217124738.png)
+![[Pasted image 20250217124738.png]]
 
 In console or using vim:
 
@@ -177,11 +175,11 @@ ffuf -ic -c -request-proto http -request xxe_rq.txt -w /usr/share/seclists/Disco
 
 *III. Let´s go back to Burp Suite and read `.viminfo`, it might have info of user:*
 
-![](assets/images/Pasted_image_20250217125846.png)
+![[Pasted image 20250217125846.png]]
 
 *IV. Again in Burp Suite:*
 
-![](assets/images/Pasted_image_20250217130154.png)
+![[Pasted image 20250217130154.png]]
 
 **Key points:** 
 - Pass user David: `h4ck3rd4v!d`

@@ -1,8 +1,35 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: Lyons Grey Cat
+description: "A collection of cybersecurity write-ups and challenges solved, including Hack The Box, TryHackMe, and more."
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://lyonspeed.github.io
 
-aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+collections_dir: collections
+
+
+collections:
+  collections/hacme:
+    permalink: "/:collection/:path/"
+    output: true
+
+
+
+just_the_docs:
+  title_separator: " "
+  home_page_title: "Lyons Grey Cat"
+
+
+  collections:
+    collections/hacme:
+      name: Hackme
+      nav_exclude: false  # Incluir en la navegación (por defecto)
+      search_exclude: false  # Incluir en la búsqueda (por defecto)
+      nav_fold: true  # Plegar la colección en la navegación (nuevo en v0.4)
+
+
+
+
+
+
+#aux_links:
+#  Template Repository: https://github.com/just-the-docs/just-the-docs-template
