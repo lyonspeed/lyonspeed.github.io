@@ -5,7 +5,7 @@ layout: default
 
 ## Reconnaissance
 
-### Step 1: Enumerate my network interface and my IP
+### Step 1: Enumerate the network interface
 
 ```bash
 ifconfig
