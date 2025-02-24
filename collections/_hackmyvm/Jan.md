@@ -54,7 +54,7 @@ PORT     STATE SERVICE    REASON
 
 **Key points:** 
 - `22/tcp open ssh`: This indicates that the SSH (Secure Shell) service is running on port 22.
-- `80/tcp open http`: This indicates that the HTTP (Hypertext Transfer Protocol) service is running on port 80.
+- `8080/tcp open http`: This indicates that the HTTP (Hypertext Transfer Protocol) service is running on port 8080.
 
 Visit `http://192.168.0.106:8080`
 

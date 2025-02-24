@@ -54,8 +54,8 @@ PORT     STATE SERVICE REASON
 ```
 
 **Key points:** 
-- `22/tcp open ssh`: This indicates that the SSH (Secure Shell) service is running on port 22.
 - `80/tcp open http`: This indicates that the HTTP (Hypertext Transfer Protocol) service is running on port 80.
+- `3306/tcp open http`: This indicates that the mysql service is running on port 3386.
 - `ttl 64`: Linux Machine
 
 Go to `192.168.0.100` by browser:
