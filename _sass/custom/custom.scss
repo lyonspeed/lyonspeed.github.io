@@ -1,0 +1,18 @@
+// Reducir el ancho de la barra lateral (franja púrpura)
+.side-bar {
+  width: 160px !important; /* Ajusta este valor según necesites */
+}
+
+// Ajustar el contenido principal para que no se traslape
+@media (min-width: 768px) {
+  .main {
+    margin-left: 250px !important; /* Debe coincidir con el ancho de .side-bar */
+    max-width: calc(100% - 160px) !important; /* Ajusta el tamaño total */
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  
+  .site {
+    display: flex;
+  }
+}
